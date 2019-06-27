@@ -59,12 +59,12 @@ class DetailViewController: UIViewController {
             count.memo = memoTextField.text!
             count.today = dateField.text!
         }
+        self.navigationController?.popViewController(animated: true)
     }
     @IBAction func del() {
         try! realm.write {
             realm.delete(CountArray[selectedCount])
         }
-        
         self.navigationController?.popViewController(animated: true)
     }
 }
